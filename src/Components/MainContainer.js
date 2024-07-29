@@ -7,7 +7,7 @@ const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   //why if condition - initially in the store, movies are null (!movies = movies not present)
   if (!movies) return; //this method is known as early return
-  const mainMovie = movies[1];
+  const mainMovie = movies[0];
 
   const { title, overview, id } = mainMovie;
 
