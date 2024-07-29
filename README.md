@@ -15,6 +15,20 @@
   - Created Redux Store with userSlice
   - Implemented Sign in/up
   - Update Profile
+  - BugFix => Sign up user displayName and prof pic update
+  - BugFix => if the user is not logged in Redirect /browse to /login page and vice-versa
+  - Unsubcribed to the onAuthStateChanged callBack
+  - Always use contants files for hardCoded values
+  - Register TMDB API - register our app for get access token
+  - Get Data from TMDB nowPlaying movies list API (In documentation)
+  - custom hook for nowPlayingMovies
+  - Create a movie Slice
+  - Update store with movies data
+  - Planning for Main and Secondary container
+  - Fetch data for Trailer Video
+  - Update store with trailer video data
+  - Embedded youtube video and make it autoplay and mute
+  - Tailwind classes to make mainContainer to look awesome
 
 # Features
 
@@ -33,3 +47,6 @@
 - NetflixGPT
 - Search Bar
 - Movie Suggestions
+
+#TMDB
+API Key: 7a16902c8a5de35b42d7437a8689af11
