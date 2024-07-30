@@ -32,8 +32,11 @@
   - Build Secondary Component
   - Build Movie list and Movie Card
   - Found out TMDB img cdn url
-  - Styling browse page 
+  - Styling browse page
   - usePopularMovies > custom Hook
+  - GPT search Page
+  - GPT Search Bar
+  - (*)Multi-language Fearture
 
 # Features
 
