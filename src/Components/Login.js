@@ -40,7 +40,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:USER_AVATAR_DEFAULT,
+            photoURL: USER_AVATAR_DEFAULT,
           })
             .then(() => {
               //fixing that bug(displayName nd photoURL not updated after login so we dispatch again)
@@ -89,17 +89,14 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute h-screen">
-        <img
-          src={BG_IMG}
-          alt="bgImg"
-        />
+      <div className="absolute">
+        <img className="h-screen w-screen object-cover" src={BG_IMG} alt="bgImg" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" bg-opacity-80 rounded-lg absolute w-3/12 p-12 bg-black bg-transparent- my-32 mx-auto right-0 left-0 text-white"
+        className=" bg-opacity-80 rounded-lg absolute w-full md:w-3/12 p-12 bg-black  my-28 mx-auto right-0 left-0 text-white"
       >
-        <h1 className="font-bold text-2xl py-4">
+        <h1 className="font-bold text-lg md:text-2xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (

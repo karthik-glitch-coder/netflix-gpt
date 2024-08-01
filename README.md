@@ -36,7 +36,15 @@
   - usePopularMovies > custom Hook
   - GPT search Page
   - GPT Search Bar
-  - (*)Multi-language Fearture
+  - (\*)Multi-language Fearture
+  - Gpt Search gemini AI api key
+  - Gpt Search API Call
+  - fetched gpt movie suggestion from TMDB search API 
+  - Created GptSlice and added movies data
+  - Re-used Movie list Component to make movie suggestion container
+  - Memoization
+  - Adding .env file + gitignore
+  - Made site Responsive
 
 # Features
 
@@ -58,3 +66,6 @@
 
 #TMDB
 API Key: 7a16902c8a5de35b42d7437a8689af11
+
+tmdb - search api
+

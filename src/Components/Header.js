@@ -5,7 +5,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGE } from "../utils/constant";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { clearGptSlice, toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
@@ -47,6 +47,10 @@ const Header = () => {
 
   const handleGptSearchView = () => {
     dispatch(toggleGptSearchView());
+    //for deleting data from ai suggestions
+    if (showGptSearch === false) {
+      dispatch(clearGptSlice());
+    }
   };
 
   const handleLanguageChange = (e) => {
@@ -54,10 +58,10 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between w-screen absolute px-8  bg-gradient-to-br from-black z-10">
-      <img className="w-44" src={LOGO} alt="logo" />
+    <div className="flex flex-col md:flex-row justify-between w-screen absolute px-8  bg-gradient-to-br from-black z-10">
+      <img className="w-44 mx-auto md:m-0" src={LOGO} alt="logo" />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {/* for multilingual - this is the best way instead of hardcoding <options/> */}
 
           {showGptSearch && (
@@ -65,9 +69,9 @@ const Header = () => {
               className="p-2 m-2 bg-blue-800 rounded-lg text-white"
               onChange={handleLanguageChange}
             >
-              {SUPPORTED_LANGUAGE.map((lge) => (
-                <option key={lge.identifier} value={lge.identifier}>
-                  {lge.name}
+              {SUPPORTED_LANGUAGE.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
                 </option>
               ))}
             </select>
@@ -80,7 +84,7 @@ const Header = () => {
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img
-            className="w-8 h-10 pt-2 pr-1 rounded-lg"
+            className="w-8 h-10 pt-2 pr-1 rounded-lg hidden md:block"
             alt="user-icon"
             src={user?.photoURL}
           />
