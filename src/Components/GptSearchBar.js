@@ -3,7 +3,7 @@ import lang from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { API_OPTIONS, OPENAI_KEY } from "../utils/constant";
-import { addGptMovieResult } from "../utils/gptSlice";
+import { addGptMovieResult, clearGptSlice } from "../utils/gptSlice";
 
 const GptSearchBar = () => {
   const dispatch = useDispatch((store) => store.gpt.gptMovies);
@@ -55,16 +55,20 @@ const GptSearchBar = () => {
     run();
   };
 
+  const handleClearSearch = () => {
+    dispatch(clearGptSlice());
+  };
+
   return (
     <div className="pt-[40%] md:p-[10%] flex justify-center ">
       <form
-        className="w-full md:w-1/2 bg-black grid grid-cols-12 rounded-lg"
+        className="w-full md:w-10/12 bg-black grid grid-cols-12 rounded-lg"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9 rounded-lg"
+          className="p-4 m-4 col-span-6 rounded-lg"
           placeholder={lang[langKey].gptSearchPlaceholder}
         />
         <button
@@ -72,6 +76,12 @@ const GptSearchBar = () => {
           onClick={handleGptSearchClick}
         >
           {lang[langKey].search}
+        </button>
+        <button
+          className="py-2 m-4 px-4 bg-red-700 col-span-3 text-white rounded-lg"
+          onClick={handleClearSearch}
+        >
+          {lang[langKey].clear}
         </button>
       </form>
     </div>

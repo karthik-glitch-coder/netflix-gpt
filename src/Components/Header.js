@@ -47,10 +47,8 @@ const Header = () => {
 
   const handleGptSearchView = () => {
     dispatch(toggleGptSearchView());
-    //for deleting data from ai suggestions
-    if (showGptSearch === false) {
-      dispatch(clearGptSlice());
-    }
+    //for deleting data from ai suggestions while moving gptSearch -> homePage
+    dispatch(clearGptSlice());
   };
 
   const handleLanguageChange = (e) => {
@@ -84,14 +82,14 @@ const Header = () => {
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img
-            className="w-8 h-10 pt-2 pr-1 rounded-lg hidden md:block"
+            className="w-8 h-10 pt-2 mt-1 pr-1 rounded-xl hidden md:block"
             alt="user-icon"
             src={user?.photoURL}
           />
 
           <button
             onClick={handleSignOut}
-            className="text-white hover:font-semibold"
+            className="hover:font-semibold py-2 px-4 mr-4  my-2 bg-lime-800 text-white rounded-lg"
           >
             Sign Out
           </button>
