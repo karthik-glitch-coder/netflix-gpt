@@ -39,12 +39,17 @@
   - (\*)Multi-language Fearture
   - Gpt Search gemini AI api key
   - Gpt Search API Call
-  - fetched gpt movie suggestion from TMDB search API 
+  - fetched gpt movie suggestion from TMDB search API
   - Created GptSlice and added movies data
   - Re-used Movie list Component to make movie suggestion container
   - Memoization
   - Adding .env file + gitignore
   - Made site Responsive
+
+# Own change
+
+- Deleting data from GptSearch page to Home
+- Added "Clear" button in GptSearchBar
 
 # Features
 
@@ -68,4 +73,3 @@
 API Key: 7a16902c8a5de35b42d7437a8689af11
 
 tmdb - search api
-
